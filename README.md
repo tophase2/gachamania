@@ -1,4 +1,5 @@
 # <Gachamania>
+https://docs.google.com/spreadsheets/d/1Z7m-Kx9m5K0GGxgz0iyZQh-FuHB7yqTfKr9ylHdwY40/edit#gid=1898975908
 
 ## サイト概要
 ### サイトテーマ
