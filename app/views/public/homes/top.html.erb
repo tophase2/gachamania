@@ -1,1 +1,23 @@
-Gachamania
+<div class="container">
+  <div class="row no-gutters">
+    <div class="col-md-5 col-sm-10 mx-2 mx-sm-auto text-center shadow-lg rounded px-0 my-5">
+      <h4 class="text-dark bg-light py-4 mb-0">Gachamania</h4>
+      <div class="form-body p-4">
+        <div class="mx-auto text-center mb-4">
+          <p>〜ガチャのマニアによるマニアのためのSNSサイト〜</p>
+        </div>
+        <div class="btn-wrapper col-10 mx-auto mb-4">
+          <div class="row">
+            <%= link_to 'ゲストログイン(閲覧用)', users_guest_sign_in_path, class: "btn btn-secondary btn-sm btn-block mb-3 sign_in", method: :post %>
+          </div>
+          <div class="row">
+            <%= link_to "ログイン", new_user_session_path, class: "btn btn-info btn-sm btn-block mb-3 sign_in" %>
+          </div>
+          <div class="row">
+            <%= link_to "サインアップ", new_user_registration_path, class: "btn btn-success btn-sm btn-block sign_up" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
