@@ -6,6 +6,18 @@
         <div class="mx-auto text-center mb-4">
           <p>ユーザー新規登録</p>
         </div>
+        
+        <% if resource.errors.any? %>
+          <ul class="alert alert-danger" role="alert">
+            <h6 class="alert-heading">
+              <%= resource.errors.count %>件のエラーが発生しました
+            </h6>
+            <% resource.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        <% end %>
+        
         <%= form_with model: resource, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
           <%= render "public/shared/error_messages", resource: resource %>
           <div class="input-group mb-3">
