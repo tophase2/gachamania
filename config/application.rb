@@ -12,6 +12,8 @@ module Gachamania
     config.load_defaults 6.1
 
     config.i18n.default_locale = :ja
+    
+    config.action_view.field_error_proc = Proc.new { |html_tag, instance| html_tag }
 
     # Configuration for the application, engines, and railties goes here.
     #
