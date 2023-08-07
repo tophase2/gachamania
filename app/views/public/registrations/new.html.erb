@@ -7,7 +7,7 @@
           <p>ユーザー新規登録</p>
         </div>
         <%= form_with model: resource, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
-          <%= render "public/shared/error_messages", resource: resource %>
+          <%= render "layouts/error_messages", resource: resource %>
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text" aria-hidden="true"><i class="fas fa-user"></i></span>
@@ -18,13 +18,13 @@
             <div class="input-group-prepend">
               <span class="input-group-text" aria-hidden="true"><i class="fas fa-envelope"></i></span>
             </div>
-            <%= f.email_field :email, autofocus: true, class: "form-control is-invalid", id: "inputEmail", placeholder: "メールアドレス" %>
+            <%= f.email_field :email, autofocus: true, class: "form-control", id: "inputEmail", placeholder: "メールアドレス" %>
           </div>
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text" aria-hidden="true"><i class="fas fa-lock"></i></span>
             </div>
-            <%= f.password_field :password, autocomplete: "off", class: "form-control is-invalid", id: "inputPassword", placeholder: "パスワード(6文字以上)" %>
+            <%= f.password_field :password, autocomplete: "off", class: "form-control", id: "inputPassword", placeholder: "パスワード(6文字以上)" %>
           </div>
           <div class="input-group mb-3">
             <div class="input-group-prepend">

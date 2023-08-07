@@ -7,8 +7,10 @@ class Public::PostImagesController < ApplicationController
     @post_image = PostImage.new(post_image_params)
     @post_image.user_id = current_user.id
     if @post_image.save
+      flash[:success] = "投稿がシェアされました。"
       redirect_to post_images_path
     else
+      flash.now[:danger] = "アップロードできませんでした。"
       render :new
     end
   end
@@ -25,6 +27,7 @@ class Public::PostImagesController < ApplicationController
   def destroy
     @post_image = PostImage.find(params[:id])
     @post_image.destroy
+    flash[:dark] = "投稿が削除されました。"
     redirect_to post_images_path
   end
   
