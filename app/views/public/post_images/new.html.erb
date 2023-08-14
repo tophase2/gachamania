@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row no-gutters">
-    <div class="col-md-5 col-sm-10 mx-2 mx-sm-auto shadow-lg rounded px-0 my-5">
-      <h5 class="text-dark bg-light p-4 mb-0">画像投稿フォーム</h5>
+    <div class="col-md-5 col-sm-10 mx-2 mx-sm-auto text-center shadow-lg rounded px-0 my-5">
+      <h5 class="text-dark bg-light py-4 mb-0">新規投稿</h5>
       <div class="form-body p-4">
         <%= render "layouts/error_messages", resource: @post_image %>
         <%= form_with model: @post_image do |f| %>
@@ -12,9 +12,9 @@
             </div>
             <%= f.text_field :shop_name, class: "form-control", placeholder: "ショップ名" %>
           </div>
-          <%= f.text_area :caption, class: "form-control", rows: "3", placeholder: "コメントここに" %>
+          <%= f.text_area :caption, class: "form-control", rows: "3", placeholder: "キャプションを入力..." %>
           <hr>
-          <%= f.submit '投稿', class: "btn btn-lg btn-block btn-info mt-4" %>
+          <%= f.submit 'シェア', class: "btn btn-block btn-info mb-3 mt-4" %>
         <% end %>
       </div>
     </div>

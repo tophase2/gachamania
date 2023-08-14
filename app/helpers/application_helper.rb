@@ -5,8 +5,8 @@ module ApplicationHelper
       "danger"
     when "notice"
       "success"
-    when "error"
-      "danger"
+    when "delete"
+      "dark"
     end
   end
 end
