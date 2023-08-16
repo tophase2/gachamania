@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="row no-gutters">
+    <div class="col-md-7 col-sm-10 mx-2 mx-sm-auto shadow-lg rounded px-0 my-5">
+      <h5 class="text-dark text-center bg-light py-4 mb-0"><%= @user.name %>さんの会員情報編集</h5>
+      <div class="form-body p-4">
+        <%= form_with model: @user, url: admin_user_path(@user) do |f| %>
+		    <%= render 'layouts/error_messages', resource: @user %>
+        <table class="table table-borderless">
+          <thaed>
+            <th></th>
+            <th></th>
+            <th></th>
+          </thaed>
+          <tbody>
+            <tr>
+              <td>会員ID</td>
+              <td colspan="2"><%= @user.id %></td>
+            </tr>
+            <tr>
+              <td>ユーザー名</td>
+              <td colspan="2"><%= @user.name %></td>
+            </tr>
+            <tr>
+              <td>メールアドレス</td>
+              <td colspan="2"><%= @user.email %></td>
+            </tr>
+            <tr>
+              <td>会員ステータス</td>
+              <td colspan="2">
+					      <% if @user.is_active? %>
+						      <span class="text-success">有効</span>
+					      <% else %>
+						      <span class="text-invalid">退会済み</span>
+					      <% end %>
+				      </td>
+            </tr>
+            <tr>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
