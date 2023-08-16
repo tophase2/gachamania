@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row no-gutters">
+    <div class="col-md-7 col-sm-10 mx-2 mx-sm-auto text-center shadow-lg rounded px-0 my-5">
+      <h5 class="text-dark bg-light py-4 mb-0">会員一覧</h5>
+        <div class="form-body p-4">
+  <table class="table table-hover">
+  <thead class="table-secondary">
+    <th>会員ID</th>
+    <th>ユーザー名</th>
+    <th>メールアドレス</th>
+    <th>ステータス</th>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+    <tr>
+      <td><%= user.id %></td>
+      <td>
+        <%= link_to admin_user_path(user), class: "text-dark" do %>
+          <%= user.name %>
+        <% end %>
+      </td>
+      <td><%= user.email %></td>
+      <td>
+        <% if user.is_active? %>
+					<span class="text-success">有効</span>	
+				<% else %>
+					<span class="text-invalid">退会済み</span>
+				<% end %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= paginate @users %>
+      </div>
+    </div>
+  </div>
+</div>

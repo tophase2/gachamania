@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   
   namespace :admin do
     root 'homes#top'
+    resources :users, only: [:index, :show, :edit, :update]
   end
   
   devise_for :users, skip: [:passwords], controllers: {
