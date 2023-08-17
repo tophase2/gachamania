@@ -13,13 +13,17 @@ class Admin::UsersController < ApplicationController
   end
   
   def update
-    @user.update(user_params) ? (redirect_to admin_user_path(@user)) : (render :edit)
+    if @user.update(user_params)
+      redirect_to admin_users_path
+    else
+      render :edit
+    end
   end
   
   private
   
   def user_params
-    params.require(:users).permit(:name, :email, :is_active)
+    params.require(:user).permit(:name, :email, :is_active)
   end
   
   def ensure_user
