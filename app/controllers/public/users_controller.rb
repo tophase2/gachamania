@@ -2,6 +2,10 @@ class Public::UsersController < ApplicationController
   before_action :is_matching_login_user, only: [:edit, :update]
   before_action :ensure_guest_user, only: [:edit]
   
+  def index
+    @users = User.all
+  end
+  
   def show
     @user = User.find(params[:id])
     @post_images = @user.post_images.page(params[:page])

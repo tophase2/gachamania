@@ -1,10 +1,10 @@
 <div class="container py-4">
   <div class="w-50 mx-auto mt-4">
     <div class="row">
-      <div class="col-4">
+      <div class="col-5">
         <%= image_tag @user.get_profile_image(100,100), class: "rounded-circle"; %>
       </div>
-      <div class="col-8">
+      <div class="col-7">
         <h3><%= @user.name %> ｜ 
           <% if @user.id == current_user.id %>
             <%= link_to edit_user_path(@user), class: "text-dark" do %>
@@ -12,6 +12,11 @@
             <% end %>
           <% end %>
         </h3>
+        <div class="my-4 bg-light">
+          投稿 <%= current_user.post_images.count %>件
+          フォロワー <%= link_to @user.followers.count, user_followers_path(@user), class: "text-dark" %>人
+          フォロー中 <%= link_to @user.followings.count, user_followings_path(@user), class: "text-dark" %>人
+        </div>
       </div>
     </div>
   </div>
