@@ -19,4 +19,16 @@ class PostImage < ApplicationRecord
     end
     image
   end
+  
+  def self.search_for(content, method)
+    if method == 'perfect'
+      PostImage.where(title: content)
+    elsif method == 'forward'
+      PostImage.where('title LIKE ?', content+'%')
+    elsif method == 'backward'
+      PostImage.where('title LIKE ?', '%'+content)
+    else
+      PostImage.where('title LIKE ?', '%'+content+'%')
+    end
+  end
 end
