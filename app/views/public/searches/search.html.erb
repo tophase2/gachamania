@@ -1,7 +1,5 @@
 <% if @model == 'User' %>
-	<h3>Users search for "<%= @content %>"</h3>
   <%= render 'public/users/search', users: @records %>
 <% elsif @model == 'PostImage' %>
-	<h3>PostImages search for "<%= @content %>"</h3>
-  <%= render 'public/post_images/list', post_images: @records %>
+  <%= render 'public/post_images/search', post_images: @records %>
 <% end %>

@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row no-gutters">
+    <div class="col-md-7 col-sm-10 mx-2 mx-sm-auto text-center shadow-lg rounded px-0 my-5">
+      <h5 class="text-dark bg-light py-4 mb-0">検索</h5>
+      <div class="form-body p-4">
+        <table class='table table-hover'>
+          <thaed>
+            <tr>
+              <th>投稿</th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thaed>
+          <tbody>
+            <% post_images.each do |post_image| %>
+            <tr>
+              <td>
+                <%= link_to post_image_path(post_image.id) do %>
+                  <%= image_tag post_image.get_image, class: "card-img-top"; %>
+                <% end %>
+              </td>
+              <td><%= post_image.shop_name %></td>
+              <td><%= post_image.caption %></td>
+              <td><%= post_image.user.name %></td>
+              <td></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
