@@ -22,13 +22,13 @@ class PostImage < ApplicationRecord
   
   def self.search_for(content, method)
     if method == 'perfect'
-      PostImage.where(title: content)
+      PostImage.where(shop_name: content)
     elsif method == 'forward'
-      PostImage.where('title LIKE ?', content+'%')
+      PostImage.where('shop_name LIKE ?', content+'%')
     elsif method == 'backward'
-      PostImage.where('title LIKE ?', '%'+content)
+      PostImage.where('shop_name LIKE ?', '%'+content)
     else
-      PostImage.where('title LIKE ?', '%'+content+'%')
+      PostImage.where('shop_name LIKE ?', '%'+content+'%')
     end
   end
 end
