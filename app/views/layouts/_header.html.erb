@@ -6,7 +6,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav ml-auto">
+        <ul class="navbar-nav ml-auto mt-3">
           <% if admin_signed_in? %>
             <li><%= link_to '会員一覧', admin_users_path, class: 'nav-link text-dark' %></li>
             <li><%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: 'nav-link text-dark' %></li>
@@ -15,6 +15,7 @@
             <li><%= link_to '投稿', new_post_image_path, class: 'nav-link text-dark' %></li>
             <li><%= link_to 'プロフィール', user_path(current_user.id), class: 'nav-link text-dark' %></li>
             <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'nav-link text-dark' %></li>
+            <li><%= render 'public/searches/form' %></li>
           <% else %>
             <li><%= link_to '新規登録', new_user_registration_path, class: 'nav-link text-dark' %></li>
             <li><%= link_to 'ログイン', new_user_session_path, class: 'nav-link text-dark' %></li>

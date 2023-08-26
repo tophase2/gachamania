@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row no-gutters">
-    <div class="col-md-7 col-sm-10 mx-2 mx-sm-auto text-center shadow-lg rounded px-0 my-5">
+    <div class="col-md-10 col-sm-10 mx-2 mx-sm-auto text-center shadow-lg rounded px-0 my-5">
       <h5 class="text-dark bg-light py-4 mb-0">検索</h5>
       <div class="form-body p-4">
         <table class='table table-hover'>
@@ -18,12 +18,12 @@
             <tr>
               <td>
                 <%= link_to post_image_path(post_image.id) do %>
-                  <%= image_tag post_image.get_image, class: "card-img-top"; %>
+                  <%= image_tag post_image.get_image %>
                 <% end %>
               </td>
-              <td><%= post_image.shop_name %></td>
+              <td><strong><span><i class="far fa-flag"></i> <%= post_image.shop_name %></span></strong></td>
               <td><%= post_image.caption %></td>
-              <td><%= post_image.user.name %></td>
+              <td><span><i class="fas fa-user"></i> <%= post_image.user.name %></span></td>
               <td></td>
             </tr>
             <% end %>
